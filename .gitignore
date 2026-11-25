@@ -1,0 +1,23 @@
+# 게임 원본·산출물 (배포하지 않음)
+*.z64
+*.n64
+*.v64
+*.xdelta
+*.State
+tools/tr/
+tools/kextra.py
+tools/emu/
+tools/shots/
+# 글꼴·외부 실행 파일
+*.ttf
+*.otf
+*.exe
+*.dll
+*.zip
+*.bin
+# 이미지(문서용 스크린샷 제외)
+*.png
+!docs/images/*.png
+# 파이썬
+__pycache__/
+*.pyc
