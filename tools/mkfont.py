@@ -1,12 +1,13 @@
 from PIL import Image,ImageDraw,ImageFont
 import sys
 FONT='galmuri/Galmuri11-Bold.ttf'
-W,H=12,12
+W,H=12,13
+TOP=1
 def render(ch,size=12):
     f=ImageFont.truetype(FONT,size)
     im=Image.new('L',(W,H),0); dr=ImageDraw.Draw(im); dr.fontmode='1'
     bb=dr.textbbox((0,0),'한',font=f)
-    dr.text(((W-(bb[2]-bb[0]))//2-bb[0],(H-(bb[3]-bb[1]))//2-bb[1]),ch,font=f,fill=255)
+    dr.text(((W-(bb[2]-bb[0]))//2-bb[0],TOP-bb[1]),ch,font=f,fill=255)
     return im
 def glyph_bytes(im):
     px=im.load(); out=bytearray(224)

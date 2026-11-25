@@ -19,7 +19,7 @@ def build():
     a.L('COMMON')
     a.addiu('t0','t0',-0x80); a.sll('t0','t0',6); a.addiu('t1','t1',-0xc0); a.or_('t0','t0','t1')
     a.lui('at',0x8040); a.sw('t0',CUR,'at')
-    a.lui('at',0x8008); a.lw('t1',0x5994,'at'); a.lui('t2',0x0d0c); a.sw('t2',SLOT*4,'t1')
+    a.lui('at',0x8008); a.lw('t1',0x5994,'at'); a.lui('t2',0x0d0d); a.sw('t2',SLOT*4,'t1')
     a.jr('ra'); a.addiu('v0','zero',SLOT)
     a.L('ORIG'); a.j(C40); a.nop()
     # KTEX: reached by j from 0x15042458; must do lw t9,(a2) and return to 0x15042460
